@@ -25,10 +25,10 @@ echo "$LINUX_AMD64_CHKSUM linux64_jre.tar.gz" | sha256sum -c
 # Note: Host umask may have checked out this directory with g/o permissions blank
 chmod -R u=rwX,go=rX appimage
 # ...ditto for the build process
-chmod 644 target/OpenRune.jar
+chmod 644 target/Arcyte.jar
 
-cp native/build-x64/src/OpenRune build/linux-x64/
-cp target/OpenRune.jar build/linux-x64/
+cp native/build-x64/src/Arcyte build/linux-x64/
+cp target/Arcyte.jar build/linux-x64/
 cp packr/linux-x64-config.json build/linux-x64/config.json
 cp target/filtered-resources/app.desktop build/linux-x64/
 cp appimage/app.png build/linux-x64/
@@ -41,10 +41,10 @@ mkdir -p jre/lib/amd64/server/
 ln -s ../../server/libjvm.so jre/lib/amd64/server/ # packr looks for libjvm at this hardcoded path
 
 # Symlink AppRun -> RuneLite
-ln -s OpenRune AppRun
+ln -s Arcyte AppRun
 
 # Ensure RuneLite is executable to all users
-chmod 755 OpenRune
+chmod 755 Arcyte
 popd
 
 if ! [ -f appimagetool-x86_64.AppImage ] ; then
@@ -57,4 +57,4 @@ echo "df3baf5ca5facbecfc2f3fa6713c29ab9cefa8fd8c1eac5d283b79cab33e4acb  appimage
 
 ./appimagetool-x86_64.AppImage \
 	build/linux-x64/ \
-	OpenRune.AppImage
+	Arcyte.AppImage
