@@ -12,7 +12,7 @@ ArchitecturesAllowed=arm64
 PrivilegesRequired=lowest
 
 WizardSmallImageFile=${basedir}/innosetup/app_small.bmp
-WizardImageFile=${basedir}/innosetup/left.bmp
+WizardImageFile=${basedir}/innosetup/app_small.bmp
 SetupIconFile=${basedir}/innosetup/app.ico
 UninstallDisplayIcon={app}\Daeyalt.exe
 
