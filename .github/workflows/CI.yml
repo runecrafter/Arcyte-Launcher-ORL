@@ -62,9 +62,9 @@ jobs:
         with:
           name: windows
           path: |
-            OpenRuneSetup.exe
-            OpenRuneSetup32.exe
-            OpenRuneSetupAArch64.exe
+            DaeyaltSetup.exe
+            DaeyaltSetup32.exe
+            DaeyaltSetupAArch64.exe
           if-no-files-found: error
   linux:
     runs-on: ubuntu-20.04
