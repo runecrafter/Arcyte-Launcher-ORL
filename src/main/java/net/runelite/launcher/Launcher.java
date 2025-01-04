@@ -558,6 +558,7 @@ public class Launcher
 			ClientType[] types = getClientManifest();
 			for (ClientType type : types)
 			{
+				System.err.println("Inputting: " + type.getName() + " - type= " + type);
 				clientTypes.put(type.getName(), type);
 			}
 		}
@@ -585,6 +586,7 @@ public class Launcher
 
 		Gson gson = new Gson();
 		ClientType[] manifest = gson.fromJson(new InputStreamReader(new ByteArrayInputStream(manifestBytes)), ClientType[].class);
+
 		System.out.println("Parsed manifest with " + manifest.length + " entries");
 
 		return manifest;
@@ -594,17 +596,9 @@ public class Launcher
 			NoSuchAlgorithmException, InvalidKeyException, SignatureException, VerificationException {
 		HttpRequestManager httpRequestManager = new HttpRequestManager();
 
+		System.err.println("Attempting to obtain bootstrap from: " + type);
+
 		byte[] bootstrapBytes = httpRequestManager.sendGet(clientTypes.get(type).getBootstrap());
-		byte[] signatureBytes = httpRequestManager.sendGet(clientTypes.get(type).getBootstrapsig());
-
-		Certificate certificate = getCertificate();
-		Signature s = Signature.getInstance("SHA256withRSA");
-		s.initVerify(certificate);
-		s.update(bootstrapBytes);
-
-		if (!s.verify(signatureBytes)) {
-			throw new VerificationException("Unable to verify bootstrap signature");
-		}
 
 		Gson gson = new Gson();
 		return gson.fromJson(new InputStreamReader(new ByteArrayInputStream(bootstrapBytes)), Bootstrap.class);
