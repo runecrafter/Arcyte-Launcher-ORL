@@ -175,18 +175,18 @@ asking the user and download right away, if you have more then 2 clients it will
 ### Branding
 ## Names
 
-1) Go into launcher.properties And edit 'Arcyte' and links to your server links and name
+1) Go into launcher.properties And edit 'Daeyalt' and links to your server links and name
 
 ```kotlin
 runelite.launcher.version=${project.version}  
 runelite.discord.invite=**https://runelite.net/redirect/launcher/discord**  
 runelite.wiki.troubleshooting.link=**https://runelite.net/redirect/launcher/troubleshooting**  
 runelite.dnschange.link=https://1.1.1.1/dns/#setup-instructions  
-runelite.download.link=https://**Arcyte**.net/download/  
-runelite.website=https://**Arcyte**.net/  
-runelite.bootstrap=https://Arcyte.s3.eu-west-2.amazonaws.com/bootstrap.json  
-runelite.bootstrapsig=https://Arcyte.s3.eu-west-2.amazonaws.com/bootstrap.json.sha256  
-runelite.name=**Arcyte**  
+runelite.download.link=https://**Daeyalt**.net/download/  
+runelite.website=https://**Daeyalt**.net/  
+runelite.bootstrap=https://Daeyalt.s3.eu-west-2.amazonaws.com/bootstrap.json  
+runelite.bootstrapsig=https://Daeyalt.s3.eu-west-2.amazonaws.com/bootstrap.json.sha256  
+runelite.name=**Daeyalt**  
 runelite.main=net.runelite.client.RuneLite
 ```
 
@@ -196,11 +196,11 @@ This will bring this window up
 
 ![This is an image](https://i.imgur.com/VqiqIeP.png)
 
-Make sure CC is selected and replace 'Arcyte' with 'MyCoolName' MAKE SURE ITS CAPS E same with the server name
+Make sure CC is selected and replace 'Daeyalt' with 'MyCoolName' MAKE SURE ITS CAPS E same with the server name
 
 3) Inside Intellij click the root of the project and press CTRL + ALT + R
 
-Make sure CC is selected and replace 'Arcyte' with 'myCoolName' MAKE SURE ITS LOWERCASE E same with the server name
+Make sure CC is selected and replace 'Daeyalt' with 'myCoolName' MAKE SURE ITS LOWERCASE E same with the server name
 
 ![This is an image](https://i.imgur.com/3uXXxbL.png)
 
@@ -246,7 +246,7 @@ public static final Color PROGRESS_ERROR_COLOR = new Color(230, 30, 30);
 
 ## Getting your files
 
-Once you have pushed your files to github, github actions will build your launcher you can then find them under the workflow action it runs EG: https://github.com/Arcyte-Community/Runelite-Launcher-rsps/actions/runs/3014844052
+Once you have pushed your files to github, github actions will build your launcher you can then find them under the workflow action it runs EG: https://github.com/Daeyalt-Community/Runelite-Launcher-rsps/actions/runs/3014844052
 
 ![img.png](img.png)
 

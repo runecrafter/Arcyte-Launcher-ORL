@@ -81,15 +81,15 @@ jlink \
   --add-modules jdk.xml.dom \
   --add-modules jdk.zipfs
 
-cp native/build-aarch64/src/Release/Arcyte.exe build/win-aarch64/
-cp target/Arcyte.jar build/win-aarch64/
+cp native/build-aarch64/src/Release/Daeyalt.exe build/win-aarch64/
+cp target/Daeyalt.jar build/win-aarch64/
 cp packr/win-aarch64-config.json build/win-aarch64/config.json
 cp liblauncher/buildaarch64/Release/launcher_aarch64.dll build/win-aarch64/
 
-echo Arcyte.exe aarch64 sha256sum
-sha256sum build/win-aarch64/Arcyte.exe
+echo Daeyalt.exe aarch64 sha256sum
+sha256sum build/win-aarch64/Daeyalt.exe
 
-dumpbin //HEADERS build/win-aarch64/Arcyte.exe
+dumpbin //HEADERS build/win-aarch64/Daeyalt.exe
 
 # We use the filtered iss file
 iscc target/filtered-resources/arch64.iss

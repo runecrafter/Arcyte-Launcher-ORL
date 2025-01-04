@@ -14,7 +14,7 @@ begin
 
     rlUpgrade := GetEnv('OPENRUNE_UPGRADE');
     if rlUpgrade <> '' then begin
-      exePath := ExpandConstant('{app}\Arcyte.exe');
+      exePath := ExpandConstant('{app}\Daeyalt.exe');
       Exec(exePath, GetEnv('OPENRUNE_UPGRADE_PARAMS'), '', SW_SHOW, ewNoWait, ResultCode);
     end;
   end;

@@ -100,14 +100,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: jar
-          path: target/Arcyte.jar
+          path: target/Daeyalt.jar
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
           name: linux
           path: |
-            Arcyte.AppImage
-            Arcyte-aarch64.AppImage
+            Daeyalt.AppImage
+            Daeyalt-aarch64.AppImage
           if-no-files-found: error
   macos:
     runs-on: macos-12
@@ -153,13 +153,13 @@ jobs:
         run: ./build-osx-aarch64.sh --build --dmg
       # tar app to keep permissions correct
       - name: tar app
-        run: tar -cf app.tar build/macos-x64/Arcyte.app build/macos-aarch64/Arcyte.app build-osx-x64.sh build-osx-aarch64.sh osx/signing.entitlements
+        run: tar -cf app.tar build/macos-x64/Daeyalt.app build/macos-aarch64/Daeyalt.app build-osx-x64.sh build-osx-aarch64.sh osx/signing.entitlements
       - uses: actions/upload-artifact@v4
         with:
           name: macos-dmg
           path: |
-            Arcyte-x64.dmg
-            Arcyte-aarch64.dmg
+            Daeyalt-x64.dmg
+            Daeyalt-aarch64.dmg
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:

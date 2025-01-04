@@ -1,6 +1,6 @@
 {
   "classPath": [
-    "Arcyte.jar"
+    "Daeyalt.jar"
   ],
   "mainClass": "net.runelite.launcher.Launcher",
   "vmArgs": [

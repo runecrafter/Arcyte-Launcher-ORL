@@ -2,7 +2,7 @@
 
 set -e
 
-APPBASE="build/macos-x64/Arcyte.app"
+APPBASE="build/macos-x64/Daeyalt.app"
 
 build() {
     pushd native
@@ -23,8 +23,8 @@ build() {
 
     mkdir -p $APPBASE/Contents/{MacOS,Resources}
 
-    cp native/build-x64/src/Arcyte $APPBASE/Contents/MacOS/
-    cp target/Arcyte.jar $APPBASE/Contents/Resources/
+    cp native/build-x64/src/Daeyalt $APPBASE/Contents/MacOS/
+    cp target/Daeyalt.jar $APPBASE/Contents/Resources/
     cp packr/macos-x64-config.json $APPBASE/Contents/Resources/config.json
     cp target/filtered-resources/Info.plist $APPBASE/Contents/
     cp osx/app.icns $APPBASE/Contents/Resources/icons.icns
@@ -33,12 +33,12 @@ build() {
     mkdir $APPBASE/Contents/Resources/jre
     mv jdk-$MAC_AMD64_VERSION-jre/Contents/Home/* $APPBASE/Contents/Resources/jre
 
-    echo Setting world execute permissions on Arcyte
+    echo Setting world execute permissions on Daeyalt
     pushd $APPBASE
-    chmod g+x,o+x Contents/MacOS/Arcyte
+    chmod g+x,o+x Contents/MacOS/Daeyalt
     popd
 
-    otool -l $APPBASE/Contents/MacOS/Arcyte
+    otool -l $APPBASE/Contents/MacOS/Daeyalt
 }
 
 dmg() {
@@ -48,24 +48,24 @@ dmg() {
     # create-dmg exits with an error code due to no code signing, but is still okay
     # note we use Adam-/create-dmg as upstream does not support UDBZ
     create-dmg --format UDBZ $APPBASE . || true
-    mv Arcyte\ *.dmg Arcyte-x64.dmg
+    mv Daeyalt\ *.dmg Daeyalt-x64.dmg
 
     # dump for CI
-    hdiutil imageinfo Arcyte-x64.dmg
+    hdiutil imageinfo Daeyalt-x64.dmg
 
-    if ! hdiutil imageinfo Arcyte-x64.dmg | grep -q "Format: UDBZ" ; then
+    if ! hdiutil imageinfo Daeyalt-x64.dmg | grep -q "Format: UDBZ" ; then
         echo "Format of resulting dmg was not UDBZ, make sure your create-dmg has support for --format"
         exit 1
     fi
 
-    if ! hdiutil imageinfo Arcyte-x64.dmg | grep -q "Apple_HFS" ; then
+    if ! hdiutil imageinfo Daeyalt-x64.dmg | grep -q "Apple_HFS" ; then
         echo Filesystem of dmg is not Apple_HFS
         exit 1
     fi
 
     # Notarize app
-    if xcrun notarytool submit Arcyte-x64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
-        xcrun stapler staple Arcyte-x64.dmg
+    if xcrun notarytool submit Daeyalt-x64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
+        xcrun stapler staple Daeyalt-x64.dmg
     fi
 }
 

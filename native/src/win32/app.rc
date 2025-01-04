@@ -11,9 +11,9 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "FileDescription",  "Arcyte"
-            VALUE "OriginalFilename", "Arcyte.exe"
-            VALUE "ProductName",      "Arcyte Launcher"
+            VALUE "FileDescription",  "Daeyalt"
+            VALUE "OriginalFilename", "Daeyalt.exe"
+            VALUE "ProductName",      "Daeyalt Launcher"
         END
     END
 
