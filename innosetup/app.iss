@@ -11,7 +11,7 @@ ExtraDiskSpaceRequired=30000000
 ArchitecturesAllowed=x64
 PrivilegesRequired=lowest
 
-WizardSmallImageFile=${basedir}/innosetup/app_small.bmp
+WizardSmallImageFile=${basedir}/innosetup/app_icon.bmp
 SetupIconFile=${basedir}/innosetup/app.ico
 UninstallDisplayIcon={app}\Daeyalt.exe
 
