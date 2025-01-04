@@ -110,7 +110,7 @@ jobs:
             Daeyalt-aarch64.AppImage
           if-no-files-found: error
   macos:
-    runs-on: macos-12
+    runs-on: macos-14
     steps:
       - uses: actions/setup-python@v4
         with:

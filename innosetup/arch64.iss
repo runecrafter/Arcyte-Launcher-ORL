@@ -20,7 +20,7 @@ Compression=lzma2
 SolidCompression=yes
 
 OutputDir=${basedir}
-OutputBaseFilename=OpenRuneSetupAArch64
+OutputBaseFilename=DaeyaltSetupAArch64
 
 [Tasks]
 Name: DesktopIcon; Description: "Create a &desktop icon";
